@@ -1,5 +1,3 @@
-// Writed by rtosun
-
 #include <stdio.h>
 
 int	main(void)
@@ -14,3 +12,5 @@ int	main(void)
 	while (++i < 10)
 		printf("%i", dizi[i]);
 }
+
+// writed by rtosun

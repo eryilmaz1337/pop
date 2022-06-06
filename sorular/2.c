@@ -1,5 +1,3 @@
-// Writed by rtosun
-
 #include <stdio.h>
 #include <string.h>
 
@@ -15,3 +13,5 @@ int	main(void)
 	strchr(asd, 'q');
 	printf("%s", dizi);
 }
+
+// writed by rtosun

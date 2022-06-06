@@ -1,5 +1,3 @@
-// Writed by rtosun
-
 #include <stdio.h>
 
 int	main(void)
@@ -17,3 +15,5 @@ int	main(void)
 	*b = *b >> 1;
 	printf("%i", a);
 }
+
+// writed by rtosun

@@ -32,3 +32,5 @@ if [ -n "$input" ] && [ "$input" = "y" ]; then
 fi
 mv ../.trash/* ./
 rm -rf a.out
+
+# created by eryilmaz, rtosun, ademirci
