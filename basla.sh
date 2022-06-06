@@ -12,6 +12,10 @@ echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
 	cd ./sorular
 	S=$(ls -l | wc -l)-1
+	tmp=SAYI
 	SAYI=$((RANDOM%S))
+	if [ -n "$SAYI" ] && [ "$SAYI" != "$tmp" ]; then
+		echo oldu
+	fi
 	cat $SAYI.c
 fi
