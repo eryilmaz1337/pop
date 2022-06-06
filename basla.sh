@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Colors
 purple=$'\033[1;34m'
@@ -8,19 +7,20 @@ green=$'\033[0;32m'
 echo "hoşgeldiniz"
 # Commands
 gcc sec.c -o sec
-mv sec ./sorular
-read -n1 -p "${purple}pop başlamak istermisiniz ?[${green}y${purple}/${red}N${purple}]${reset} " input
+mv sec ./src
+cd ./sorular
+read -n1 -p "${purple}pop'a başlamak istermisiniz ?[${green}y${purple}/${red}N${purple}]${reset} " input
 echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
 	for((i = 0; i <= 3 ; i++)) do
-	cd ./sorular
 	SORULAR=$(ls)
 	SORUSAYISI=$(ls -l | wc -l)-1
 	RSAYI=$((RANDOM%SORUSAYISI))
-	SECILENSORU=$(./sec $RSAYI $SORULAR)
+	SECILENSORU=$(../src/sec $RSAYI $SORULAR)
 	cat $SECILENSORU
 	gcc $SECILENSORU -o cevap
-	cev=$(./cevap)
+	mv cevap ../src
+	cev=$(../src/cevap)
 	mv $SECILENSORU ../.trash
 	read  -p "${purple}Cevap ne kardeşşş ?${reset} " input
 	if [ "$input" ] && [ "$input" = "$cev" ]; then
