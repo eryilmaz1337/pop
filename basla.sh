@@ -8,8 +8,10 @@ green=$'\033[0;32m'
 echo "hoşgeldiniz"
 # Commands
 read -n1 -p "${purple}pop başlamak istermisiniz ?[${green}y${purple}/${red}N${purple}]${reset} " input
+echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
 	cd ./sorular
-	S = ls -la | wc -l
-	SAYİ = $((RANDOM%S))
+	S=$(ls -l | wc -l)-1
+	SAYI=$((RANDOM%S))
+	cat soru$SAYI.c
 fi
