@@ -6,13 +6,14 @@ int	main(void)
 {
 	int	a;
 	int	*b;
-	int	**c;
 
-	a = 2;
+	a = 0;
+	a += sizeof(sizeof(a));
 	b = (int *)&a;
-	*b += 2;
-	a++;
-	c = (int **)&b;
-	**c += 10;
-	printf("%i", *b);
+	if (sizeof(*b) == 8)
+		a += 10;
+	else if (sizeof(*b) == 4)
+		a -= 10;
+	*b = *b >> 1;
+	printf("%i", a);
 }

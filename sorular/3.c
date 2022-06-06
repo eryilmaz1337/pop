@@ -4,13 +4,13 @@
 
 int	main(void)
 {
-	int	dizi[10] = {0,1,2,3,4,5,6,7,8};
-	unsigned long	i;
+	char	dizi[] = "can";
+	char	*asd;
 
-	i = -1;
-	while (++i < sizeof(dizi) / sizeof(int))
-		dizi[i]++;
-	i = -1;
-	while (++i < 10)
-		printf("%i ", dizi[i]);
+	asd = dizi;
+	*asd = 'q';
+	asd++;
+	asd[1] = (char) 'e';
+	strchr(asd, 'q');
+	printf("%s", dizi);
 }

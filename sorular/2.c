@@ -4,16 +4,13 @@
 
 int	main(void)
 {
-	int	a;
-	int	*b;
+	int	dizi[10] = {0,1,2,3,4,5,6,7,8};
+	unsigned long	i;
 
-	a = 0;
-	a += sizeof(sizeof(a));
-	b = (int *)&a;
-	if (sizeof(*b) == 8)
-		a += 10;
-	else if (sizeof(*b) == 4)
-		a -= 10;
-	*b = *b >> 1;
-	printf("%i", a);
+	i = -1;
+	while (++i < sizeof(dizi) / sizeof(int))
+		dizi[i]++;
+	i = -1;
+	while (++i < 10)
+		printf("%i ", dizi[i]);
 }
