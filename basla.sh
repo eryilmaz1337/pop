@@ -13,5 +13,5 @@ if [ -n "$input" ] && [ "$input" = "y" ]; then
 	cd ./sorular
 	S=$(ls -l | wc -l)-1
 	SAYI=$((RANDOM%S))
-	cat soru$SAYI.c
+	cat $SAYI.c
 fi
