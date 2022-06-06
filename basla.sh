@@ -9,7 +9,23 @@ green=$'\033[0;32m'
 dogru=$((0)); # yarım kalda
 yanlis=$((0)); # yarım kalda
 # function
+function tmp()
+{
+	if [ -d .trash ];then
+		rm -rf ./.trash/* ./sorular
+		git clone https://github.com/erdem149/popup_leak.git sorular
+		clear
+		echo ${green}"Başlamya hazır"${reset}
+	else
+		mkdir .trash
+	fi
 
+	if [ -d tmp ];then
+		echo ${green}"Başlamya hazır"${reset}
+	else
+		mkdir .tmp
+	fi
+}
 function kontrol()
 {
 	if [ -d sorular ];then
@@ -33,7 +49,7 @@ function atama()
 	SECILENSORU=$(../src/sec $RSAYI $SORULAR)
 	cat $SECILENSORU
 	gcc $SECILENSORU -o cevap
-	mv cevap ../src
+	mv cevap ../.tmp
 	cev=$(../src/cevap)
 	mv $SECILENSORU ../.trash
 	echo
@@ -71,19 +87,13 @@ echo ${green}"Hoşgeldiniz"
 read -p "${purple}pop'a başlamak istermisiniz ?[${green}y${purple}/${red}N${purple}]${reset}" input
 echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
+	tmp
 	gcc sec.c -o sec
-	mv sec ./src
-	if [ -d .trash ];then
-		rm -rf ./.trash/* ./sorular
-		git clone https://github.com/erdem149/popup_leak.git sorular
-		clear
-		echo ${green}"Başlamya hazır"${reset}
-	else
-		mkdir .trash
-	fi
+	mv sec ./.tmp
 	cd ./sorular
 	sor
 	rm -rf ../.trash
+	rm -rf ../.tmp
 fi
 
 
