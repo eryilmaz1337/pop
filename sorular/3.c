@@ -1,17 +1,18 @@
 // Writed by rtosun
 
 #include <stdio.h>
-#include <string.h>
 
 int	main(void)
 {
-	char	dizi[] = "can";
-	char	*asd;
+	int	a;
+	int	*b;
+	int	**c;
 
-	asd = dizi;
-	*asd = 'q';
-	asd++;
-	asd[1] = (char) 'e';
-	strchr(asd, 'q');
-	printf("%s", dizi);
+	a = 2;
+	b = (int *)&a;
+	*b += 2;
+	a++;
+	c = (int **)&b;
+	**c += 10;
+	printf("%i", *b);
 }

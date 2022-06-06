@@ -20,13 +20,13 @@ if [ -n "$input" ] && [ "$input" = "y" ]; then
 	SECILENSORU=$(./sec $RSAYI $SORULAR)
 	cat $SECILENSORU
 	gcc $SECILENSORU -o cevap
-	cev=./cevap
+	cev=$(./cevap)
 	mv $SECILENSORU ../.trash
-	read -n1 -p "${purple}Cevap ne kardeşşş ?${reset} " input
+	read  -p "${purple}Cevap ne kardeşşş ?${reset} " input
 	if [ "$input" ] && [ "$input" = "$cev" ]; then
-		echo ${green}OK
+		echo ${green}[OK]${reset}
 	else
-		echo ${red}KO
+		echo ${red}[KO]${reset}
 	fi
 	done
 fi
