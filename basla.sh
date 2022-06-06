@@ -9,7 +9,7 @@ echo "hoşgeldiniz"
 gcc sec.c -o sec
 mv sec ./src
 cd ./sorular
-read -n1 -p "${purple}pop'a başlamak istermisiniz ?[${green}y${purple}/${red}N${purple}]${reset} " input
+read -p "${purple}pop'a başlamak istermisiniz ?[${green}y${purple}/${red}N${purple}]${reset} " input
 echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
 	for((i = 0; i <= 3 ; i++)) do
@@ -21,16 +21,28 @@ if [ -n "$input" ] && [ "$input" = "y" ]; then
 	gcc $SECILENSORU -o cevap
 	mv cevap ../src
 	cev=$(../src/cevap)
-	mv $SECILENSORU ../.trash
-	read  -p "${purple}Cevap ne kardeşşş ?${reset} " input
+	mv $SECILENSORU ../trash
+	HAK=1
+	echo
+	read  -p "${purple}Çıktıyı yazınız : ${reset} " input
 	if [ "$input" ] && [ "$input" = "$cev" ]; then
 		echo ${green}[OK]${reset}
 	else
+		echo
+		read  -p "${purple}Yanlis tekrar deneyiniz : ${reset} " input
+		if [ "$input" ] && [ "$input" = "$cev" ]; then
+		echo ${green}[OK]${reset}
+		else
 		echo ${red}[KO]${reset}
+		fi
+		if [ "$HAK" = "1" ]; then
+		HAK=0
+		else
+			echo ${red}[KO]${reset}
+		fi
 	fi
 	done
 fi
-mv ../.trash/* ./
-rm -rf a.out
+mv ../trash/* ./
 
 # created by eryilmaz, rtosun, ademirci
