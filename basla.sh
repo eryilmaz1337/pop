@@ -15,17 +15,18 @@ function tmp()
 		rm -rf ./.trash/* ./sorular
 		git clone https://github.com/erdem149/popup_leak.git sorular
 		clear
-		echo ${green}"Başlamya hazır"${reset}
+		echo ${green}"Başlamaya hazır"${reset}
 	else
 		mkdir .trash
 	fi
 
-	if [ -d tmp ];then
-		echo ${green}"Başlamya hazır"${reset}
+	if [ -d .tmp ];then
+		echo ${green}"Başlamaya hazır"${reset}
 	else
 		mkdir .tmp
 	fi
 }
+
 function kontrol()
 {
 	if [ -d sorular ];then
@@ -46,11 +47,11 @@ function atama()
 	SORULAR=$(ls)
 	SORUSAYISI=$(ls -l | wc -l)-1
 	RSAYI=$((RANDOM%SORUSAYISI))
-	SECILENSORU=$(../src/sec $RSAYI $SORULAR)
+	SECILENSORU=$(../.tmp/sec $RSAYI $SORULAR)
 	cat $SECILENSORU
 	gcc $SECILENSORU -o cevap
 	mv cevap ../.tmp
-	cev=$(../src/cevap)
+	cev=$(../.tmp/cevap)
 	mv $SECILENSORU ../.trash
 	echo
 }
@@ -88,7 +89,7 @@ read -p "${purple}pop'a başlamak istermisiniz ?[${green}y${purple}/${red}N${pur
 echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
 	tmp
-	gcc sec.c -o sec
+	gcc ./source/sec.c -o sec
 	mv sec ./.tmp
 	cd ./sorular
 	sor
