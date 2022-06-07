@@ -6,8 +6,8 @@ reset=$'\033[0;39m'
 red=$'\033[0;31m'
 green=$'\033[0;32m'
 # variable
-dogru=$((0)); # yarım kalda
-yanlis=$((0)); # yarım kalda
+dogru=0 # yarım kalda
+yanlis=0 # yarım kalda
 # function
 function tmp()
 {
@@ -63,16 +63,16 @@ function sor()
 		read  -p "${purple}Çıktıyı yazınız : ${reset}[${green}$dogru${purple}/${red}$yanlis${purple}] :${reset}" input
 		if [ "$input" ] && [ "$input" = "$cev" ]; then
 			echo ${green}[OK]${reset}
-			dogru++;
+				dogru=$(($dogru + 1))
 		else
 			echo
 			read -p "${purple}Yanlış tekrar deneyiniz ${reset}[${green}$dogru${purple}/${red}$yanlis${purple}] :${reset}" input
 			if [ "$input" ] && [ "$input" = "$cev" ]; then
 				echo ${green}[OK]${reset}
-				dogru++;
+				dogru=$(($dogru + 1))
 			else
 				echo ${red}[KO]${reset}
-				yanlis++;
+				yanlis=$(($yanlis + 1))
 			fi
 		fi
 	done
