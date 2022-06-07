@@ -30,6 +30,17 @@ function tmp()
 function kontrol()
 {
 	git pull
+	if [ -d .trash ];then
+		rm -rf .trash
+	fi
+
+	if [ -d .tmp ];then
+		rm -rf .tmp
+	fi
+	if [ -d sorular ];then
+		rm -rf sorular
+	fi
+
 	if [ -d sorular ];then
 	cd ./sorular
 	git pull
@@ -39,14 +50,13 @@ function kontrol()
 	else
 	git clone https://github.com/erdem149/popup_leak.git sorular
 	clear
-
-fi
+	fi
 }
 
 function atama()
 {
 	SORULAR=$(ls)
-	SORUSAYISI=$(ls -l | wc -l)-1
+	SORUSAYISI=$(ls -l | wc -l)
 	RSAYI=$((RANDOM%SORUSAYISI))
 	SECILENSORU=$(../.tmp/sec $RSAYI $SORULAR)
 	cat $SECILENSORU
@@ -59,7 +69,7 @@ function atama()
 
 function sor()
 {
-	for((i = 0; i <= 5 ; i++)) do
+	for((i = 0; i <= 6 ; i++)) do
 		atama
 		read  -p "${purple}Çıktıyı yazınız : ${reset}[${green}$dogru${purple}/${red}$yanlis${purple}] :${reset}" input
 		if [ "$input" ] && [ "$input" = "$cev" ]; then
