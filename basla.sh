@@ -95,6 +95,5 @@ if [ -n "$input" ] && [ "$input" = "y" ]; then
 	rm -rf ../.trash
 	rm -rf ../.tmp
 fi
-
-
+# güncelleme modülü ekle
 # created by eryilmaz, rtosun, ademirci
