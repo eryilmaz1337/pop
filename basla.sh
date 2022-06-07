@@ -29,6 +29,7 @@ function tmp()
 
 function kontrol()
 {
+	git pull
 	if [ -d sorular ];then
 	cd ./sorular
 	git pull
