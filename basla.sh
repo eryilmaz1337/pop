@@ -69,7 +69,7 @@ function atama()
 
 function sor()
 {
-	for((i = 0; i <= 6 ; i++)) do
+	for((i = 0; i <= 8 ; i++)) do
 		atama
 		read  -p "${purple}Çıktıyı yazınız : ${reset}[${green}$dogru${purple}/${red}$yanlis${purple}] :${reset}" input
 		if [ "$input" ] && [ "$input" = "$cev" ]; then
