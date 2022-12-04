@@ -2,5 +2,5 @@
 
 ### Çalıştırma:
 ```
-./baslat.sh 
+bash baslat.sh 
 ```
