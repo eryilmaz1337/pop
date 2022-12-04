@@ -1,10 +1,10 @@
 # PopUp simulation
 
-### Çalıştırma yöntem 1:
+### 🛠️Çalıştırma yöntem 1:
 ```
 bash baslat.sh 
 ```
-### Çalıştırma yöntem 2:
+### 🛠️Çalıştırma yöntem 2:
 ```
 ./baslat.sh 
 ```
