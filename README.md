@@ -2,9 +2,9 @@
 
 ### 🛠️Çalıştırma yöntem 1:
 ```
-bash baslat.sh 
+bash basla.sh 
 ```
 ### 🛠️Çalıştırma yöntem 2:
 ```
-./baslat.sh 
+./basla.sh 
 ```
