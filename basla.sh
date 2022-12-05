@@ -6,8 +6,8 @@ reset=$'\033[0;39m'
 red=$'\033[0;31m'
 green=$'\033[0;32m'
 # variable
-dogru=0 # yarım kalda
-yanlis=0 # yarım kalda
+dogru=0
+yanlis=0
 # function
 function tmp()
 {
@@ -69,6 +69,8 @@ function atama()
 
 function sor()
 {
+	mv ../source/yasin.txt ../.tmp/
+	mv ../source/a.txt ../.tmp/
 	for((i = 0; i <= 8 ; i++)) do
 		atama
 		read  -p "${purple}Çıktıyı yazınız : ${reset}[${green}$dogru${purple}/${red}$yanlis${purple}] :${reset}" input
